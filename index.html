@@ -6,45 +6,43 @@
 <meta name="screen-orientation" content="portrait">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <title>SIAL - Pasos</title>
 <style>
 *{box-sizing:border-box}
-html,body{margin:0;padding:0;height:100%;height:100dvh;overflow:hidden;background:#0a2540;overscroll-behavior:none}
+html,body{margin:0;padding:0;background:#0a2540}
 body{font-family:system-ui,Arial;color:#0a2540;font-size:17px}
-.wrap{padding:10px;padding-bottom:calc(10px + env(safe-area-inset-bottom));width:100%;height:100%;height:100dvh;display:flex;flex-direction:column;gap:10px}
-header{background:#fff;border-radius:14px;padding:12px;text-align:center;flex-shrink:0}
+.wrap{padding:10px;padding-bottom:calc(10px + env(safe-area-inset-bottom));width:100%;min-height:100dvh;display:flex;flex-direction:column;gap:10px}
+header{background:#fff;border-radius:14px;padding:14px;text-align:center;flex-shrink:0}
 header h1{margin:0;font-size:22px}
 header p{margin:4px 0 0;color:#555;font-size:14px}
 .tabs{display:flex;gap:8px;flex-shrink:0}
-.tabs button{flex:1;padding:14px;border:0;border-radius:12px;background:#1e3a5f;color:#fff;font-weight:800;font-size:16px}
+.tabs button{flex:1;padding:15px;border:0;border-radius:12px;background:#1e3a5f;color:#fff;font-weight:800;font-size:16px}
 .tabs button.active{background:#fff;color:#0a2540}
-.card{background:#fff;border-radius:14px;padding:14px;flex:1;display:flex;flex-direction:column;justify-content:space-between;overflow-y:auto}
-.card-historial{flex:1}
-label{font-weight:800;font-size:14px;display:block;margin-bottom:5px}
-input,select,textarea{width:100%;padding:13px;border:1.5px solid #dbe6f0;border-radius:10px;font-size:17px;background:#f3f8fc;outline:none}
-.row3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+.card{background:#fff;border-radius:14px;padding:16px;flex-shrink:0}
+.card-historial{flex:1;display:flex;flex-direction:column}
+label{font-weight:800;font-size:14px;display:block;margin-bottom:6px}
+input,select,textarea{width:100%;padding:15px;border:1.5px solid #dbe6f0;border-radius:10px;font-size:17px;background:#f3f8fc;outline:none}
+.row3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:4px}
 .row3 label{font-size:12px;text-align:center;white-space:nowrap}
-.row3 input{padding:12px 4px;text-align:center;font-weight:700;font-size:16px}
-.small{font-size:12px;color:#666;margin-top:4px;text-align:center}
-.crono-box{background:#0a2540;color:#fff;border-radius:12px;padding:14px;text-align:center;margin:12px 0}
-.crono-box .fase{font-size:13px;background:#ffb800;color:#000;display:inline-block;padding:4px 10px;border-radius:20px;font-weight:800;margin-bottom:6px}
-#tiempo{font-size:52px;font-weight:900;line-height:1}
-#tiempo small{font-size:18px;color:#aad}
-.crono-btns{display:flex;gap:8px;margin-top:12px}
-.btn{flex:1;padding:15px;border:0;border-radius:11px;font-weight:900;font-size:16px;cursor:pointer}
+.row3 input{padding:14px 4px;text-align:center;font-weight:700;font-size:17px}
+.small{font-size:12px;color:#666;margin-top:6px;text-align:center}
+.crono-box{background:#0a2540;color:#fff;border-radius:12px;padding:20px 14px;text-align:center;margin:14px 0}
+.crono-box .fase{font-size:13px;background:#ffb800;color:#000;display:inline-block;padding:5px 12px;border-radius:20px;font-weight:800;margin-bottom:8px}
+#tiempo{font-size:64px;font-weight:900;line-height:1}
+#tiempo small{font-size:20px;color:#aad}
+.crono-btns{display:flex;gap:8px;margin-top:14px}
+.btn{flex:1;padding:16px;border:0;border-radius:11px;font-weight:900;font-size:16px;cursor:pointer}
 .btn-start{background:#22c55e;color:#fff}
 .btn-stop{background:#f59e0b;color:#000}
 .btn-reset{background:#e5e7eb;color:#111}
-.btn-calc{background:#0a7cff;color:#fff;width:100%;padding:16px;border:0;border-radius:12px;font-weight:900;font-size:18px;margin-top:10px;flex-shrink:0}
-.btn-notas{background:#eef2f7;border:1.5px dashed #94a3b8;color:#334155;width:100%;padding:12px;border-radius:10px;font-weight:800;margin-top:10px}
+.btn-calc{background:#0a7cff;color:#fff;width:100%;padding:17px;border:0;border-radius:12px;font-weight:900;font-size:18px;margin-top:12px}
+.btn-notas{background:#eef2f7;border:1.5px dashed #94a3b8;color:#334155;width:100%;padding:13px;border-radius:10px;font-weight:800;margin-top:12px}
 #notasBoxA,#notasBoxB{display:none;margin-top:8px}
-.result{background:#eaf7ff;border:2px solid #0a7cff;border-radius:12px;padding:14px;text-align:center;display:none;margin-top:10px}
+.result{background:#eaf7ff;border:2px solid #0a7cff;border-radius:12px;padding:14px;text-align:center;display:none;margin-top:12px}
 .result b{font-size:34px}
 table{width:100%;border-collapse:collapse;font-size:13px;margin-top:10px}
-th,td{border-bottom:1px solid #eee;padding:8px 4px;text-align:center}
+th,td{border-bottom:1px solid #eee;padding:10px 4px;text-align:center}
 .hidden{display:none!important}
-/* BLOQUEO ROTACION - si gira el cel, tapa todo */
 #bloqueoRotacion{display:none;position:fixed;inset:0;background:#0a2540;color:#fff;z-index:9999;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:30px;gap:12px}
 #bloqueoRotacion b{font-size:22px}
 @media (orientation: landscape) and (max-height: 500px){
@@ -67,10 +65,9 @@ th,td{border-bottom:1px solid #eee;padding:8px 4px;text-align:center}
 </div>
 
 <div id="secCaminadora" class="card">
-<div>
 <label>Actividad / Máquina</label>
 <select id="actCaminadora"><option>-- Elegir --</option><option>Caminadora</option><option>Caminadora inclinada</option><option>Elíptica</option></select>
-<div style="margin-top:12px">
+<div style="margin-top:14px">
 <div class="row3">
 <div><label>NP</label><input id="npA" type="number" value="50"></div>
 <div><label>Seg 50 pasos</label><input id="segA" type="number" placeholder="Ej: 28"></div>
@@ -78,15 +75,11 @@ th,td{border-bottom:1px solid #eee;padding:8px 4px;text-align:center}
 </div></div>
 <button class="btn-notas" onclick="toggleNotas('notasBoxA')">📝 Notas ▼</button>
 <div id="notasBoxA"><textarea id="notasA" rows="3" placeholder="Escribe notas..."></textarea></div>
-</div>
-<div>
 <button class="btn-calc" onclick="calcular('A')">CALCULAR PASOS</button>
 <div id="resA" class="result"></div>
 </div>
-</div>
 
 <div id="secCaminando" class="card hidden">
-<div>
 <label>Actividad / Lugar</label>
 <select id="actCaminando"><option>-- Elegir --</option><option>Caminando en parque</option><option>Caminando en calle</option><option>Caminando en casa</option><option>Caminando en trabajo</option></select>
 <div class="crono-box">
@@ -106,28 +99,18 @@ th,td{border-bottom:1px solid #eee;padding:8px 4px;text-align:center}
 <div class="small">Al detener el Momento 1, los segundos se vacían solos en Seg 50 pasos. Tú pones manual el Tiempo en Movimiento al terminar.</div>
 <button class="btn-notas" onclick="toggleNotas('notasBoxB')">📝 Notas ▼</button>
 <div id="notasBoxB"><textarea id="notasB" rows="3" placeholder="Escribe notas..."></textarea></div>
-</div>
-<div>
 <button class="btn-calc" onclick="calcular('B')">CALCULAR PASOS</button>
 <div id="resB" class="result"></div>
 </div>
-</div>
 
-<div class="card card-historial" style="flex:0 0 auto">
+<div class="card card-historial">
 <h3 style="margin:0;text-align:center">📋 Historial de hoy</h3>
 <table><thead><tr><th>Modo</th><th>NP</th><th>Seg</th><th>Min</th><th>Pasos</th></tr></thead><tbody id="historial"></tbody></table>
-<button class="btn-reset btn" style="width:100%;margin-top:10px" onclick="localStorage.removeItem('sial_pasos');location.reload()">🗑 Borrar historial</button>
+<button class="btn-reset btn" style="width:100%;margin-top:auto;padding-top:16px" onclick="localStorage.removeItem('sial_pasos');location.reload()">🗑 Borrar historial</button>
 </div>
 </div>
 <script>
-// Intentar bloquear rotación en vertical - Chrome lo pide con un toque
-function intentarBloquear(){
-  try{
-    if(screen.orientation && screen.orientation.lock){
-      screen.orientation.lock('portrait').catch(()=>{});
-    }
-  }catch(e){}
-}
+function intentarBloquear(){try{if(screen.orientation && screen.orientation.lock){screen.orientation.lock('portrait').catch(()=>{});}}catch(e){}}
 document.addEventListener('click', intentarBloquear, {once:true});
 document.addEventListener('touchstart', intentarBloquear, {once:true});
 window.addEventListener('load', intentarBloquear);
