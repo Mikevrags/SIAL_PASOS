@@ -11,27 +11,26 @@
 *{box-sizing:border-box}
 html,body{margin:0;padding:0;background:#fff}
 body{font-family:system-ui,Arial;color:#0a2540;font-size:16px}
-.app{height:100dvh;display:flex;flex-direction:column;background:#fff;overflow:hidden}
-header{padding:10px 12px 8px;text-align:center;border-bottom:1px solid #e5e7eb;flex-shrink:0}
+.app{min-height:100dvh;display:flex;flex-direction:column;background:#fff}
+header{padding:10px 12px 8px;text-align:center;border-bottom:1px solid #e5e7eb}
 header h1{margin:0;font-size:21px}
 header p{margin:2px 0 0;color:#666;font-size:12px}
-.tabs{display:flex;padding:10px 12px 0;gap:8px;flex-shrink:0}
+.tabs{display:flex;padding:10px 12px 0;gap:8px}
 .tabs button{flex:1;padding:12px;border:0;border-radius:10px;background:#e2e8f0;color:#334155;font-weight:800;font-size:14px}
 .tabs button.active{background:#0a2540;color:#fff}
-.contenido{flex:1;display:flex;flex-direction:column;padding:12px;gap:10px;overflow:hidden}
+.contenido{display:flex;flex-direction:column;padding:12px;gap:10px;flex:1}
 label{font-weight:800;font-size:13px;display:block;margin-bottom:5px}
 input,select,textarea{width:100%;padding:12px;border:1.5px solid #dbe6f0;border-radius:10px;font-size:16px;background:#f3f8fc;outline:none}
 .row3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
 .row3 label{font-size:11px;text-align:center;white-space:nowrap}
 .row3 input{padding:11px 4px;text-align:center;font-weight:700;font-size:16px}
 .small{font-size:11px;color:#666;text-align:center}
-/* CRONOMETRO SOLO CONTADOR - ALTO FIJO, NADA ADENTRO */
-.crono-solo{background:#0a2540;color:#fff;border-radius:14px;height:92px;flex-shrink:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+/* CRONO SOLO CONTADOR - ALTO FIJO */
+.crono-solo{background:#0a2540;color:#fff;border-radius:14px;height:92px;display:flex;flex-direction:column;align-items:center;justify-content:center;flex-shrink:0}
 .crono-solo .fase{font-size:11px;background:#ffb800;color:#000;padding:3px 10px;border-radius:20px;font-weight:800;margin-bottom:4px}
 #tiempo{font-size:44px;font-weight:900;line-height:1}
 #tiempo small{font-size:16px;color:#aad}
-/* BOTONES FUERA DEL CRONO */
-.crono-btns{display:flex;gap:8px;flex-shrink:0}
+.crono-btns{display:flex;gap:8px}
 .btn{flex:1;padding:13px;border:0;border-radius:11px;font-weight:900;font-size:15px;cursor:pointer}
 .btn-start{background:#22c55e;color:#fff}
 .btn-stop{background:#f59e0b;color:#000}
@@ -41,12 +40,11 @@ input,select,textarea{width:100%;padding:12px;border:1.5px solid #dbe6f0;border-
 #notasBoxA,#notasBoxB{display:none}
 .result{background:#eaf7ff;border:2px solid #0a7cff;border-radius:12px;padding:10px;text-align:center;display:none}
 .result b{font-size:28px}
-/* HISTORIAL ES EL QUE LLENA HASTA ABAJO */
-.historial{flex:1;background:#f8fafc;border-radius:12px;padding:10px;display:flex;flex-direction:column;overflow:hidden}
-.historial h3{margin:0;text-align:center;font-size:14px;flex-shrink:0}
-.tabla-wrap{flex:1;overflow-y:auto}
+/* HISTORIAL YA NO ESTIRA - TODO PEGADO */
+.historial{background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:10px}
+.historial h3{margin:0;text-align:center;font-size:14px}
 table{width:100%;border-collapse:collapse;font-size:13px;margin-top:6px}
-th,td{border-bottom:1px solid #e2e8f0;padding:7px 4px;text-align:center;background:#fff}
+th,td{border-bottom:1px solid #eee;padding:7px 4px;text-align:center}
 .hidden{display:none!important}
 #bloqueoRotacion{display:none;position:fixed;inset:0;background:#0a2540;color:#fff;z-index:9999;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:30px;gap:12px}
 #bloqueoRotacion b{font-size:22px}
@@ -71,13 +69,10 @@ th,td{border-bottom:1px solid #e2e8f0;padding:7px 4px;text-align:center;backgrou
 <button class="btn-calc" onclick="calcular('A')">CALCULAR PASOS</button>
 <div id="resA" class="result"></div>
 </div>
-
 <div id="secCaminando" class="hidden" style="flex-direction:column;gap:10px">
 <label>Actividad / Lugar</label>
 <select id="actCaminando"><option>-- Elegir --</option><option>Caminando en parque</option><option>Caminando en calle</option><option>Caminando en casa</option><option>Caminando en trabajo</option></select>
-<!-- SOLO CONTADOR, SIN BOTONES ADENTRO -->
 <div class="crono-solo"><div id="faseTxt" class="fase">MOMENTO 1 - 50 PASOS</div><div id="tiempo">00:00<small>.0</small></div></div>
-<!-- BOTONES AFUERA -->
 <div class="crono-btns"><button id="btnCrono" class="btn btn-start" onclick="accionCrono()">▶ INICIAR</button><button class="btn btn-reset" onclick="reiniciarCrono()">↺ REINICIAR</button></div>
 <div class="small" id="cronoAyuda">Dale INICIAR, camina 50 pasos y dale DETENER</div>
 <div class="row3"><div><label>NP</label><input id="npB" type="number" value="50"></div><div><label>Seg 50 pasos</label><input id="segB" type="number" placeholder="Auto"></div><div><label>Tiempo Mov (min)</label><input id="tiempoB" type="number" placeholder="Ej: 30"></div></div>
@@ -86,8 +81,7 @@ th,td{border-bottom:1px solid #e2e8f0;padding:7px 4px;text-align:center;backgrou
 <button class="btn-calc" onclick="calcular('B')">CALCULAR PASOS</button>
 <div id="resB" class="result"></div>
 </div>
-
-<div class="historial"><h3>📋 Historial de hoy</h3><div class="tabla-wrap"><table><thead><tr><th>Modo</th><th>NP</th><th>Seg</th><th>Min</th><th>Pasos</th></tr></thead><tbody id="historial"></tbody></table></div><button class="btn-reset btn" style="width:100%;margin-top:8px" onclick="localStorage.removeItem('sial_pasos');location.reload()">🗑 Borrar historial</button></div>
+<div class="historial"><h3>📋 Historial de hoy</h3><table><thead><tr><th>Modo</th><th>NP</th><th>Seg</th><th>Min</th><th>Pasos</th></tr></thead><tbody id="historial"></tbody></table><button class="btn-reset btn" style="width:100%;margin-top:8px" onclick="localStorage.removeItem('sial_pasos');location.reload()">🗑 Borrar historial</button></div>
 </div>
 </div>
 <script>
