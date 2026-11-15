@@ -10,25 +10,24 @@
 <style>
 *{box-sizing:border-box}
 html,body{margin:0;padding:0;background:#fff}
-/* TODO LO DEMAS = TAMANO DE BOTONES DE ABAJO EN BASKET = 22px */
+/* V10 + V11: TODO GRANDE PAREJO */
 body{font-family:system-ui,Arial;color:#0a2540;font-size:22px}
-.app{height:100dvh;display:flex;flex-direction:column;background:#fff;overflow:hidden}
+.app{min-height:100dvh;display:flex;flex-direction:column;background:#fff}
 header{padding:8px 12px 6px;text-align:center;border-bottom:1px solid #e5e7eb;flex-shrink:0}
 header h1{margin:0;font-size:22px}
 header p{margin:2px 0 0;color:#666;font-size:16px}
 .tabs{display:flex;padding:8px 12px 0;gap:8px;flex-shrink:0}
 .tabs button{flex:1;padding:12px;border:0;border-radius:10px;background:#e2e8f0;color:#334155;font-weight:900;font-size:22px}
 .tabs button.active{background:#0a2540;color:#fff}
-.contenido{flex:1;display:flex;flex-direction:column;padding:10px 12px;gap:8px;overflow:hidden;min-height:0}
-/* COMPACTO - SIN HUECOS, SIN SPACE-BETWEEN */
-.sec{flex:0 0 auto;display:flex;flex-direction:column;gap:8px}
+.contenido{flex:1;display:flex;flex-direction:column;padding:10px 12px;gap:8px}
+.sec{display:flex;flex-direction:column;gap:8px}
 label{font-weight:900;font-size:22px;display:block;margin-bottom:4px}
 input,select,textarea{width:100%;padding:10px;border:1.5px solid #dbe6f0;border-radius:10px;font-size:22px;background:#f3f8fc;outline:none}
 .row3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
 .row3 label{font-size:18px;text-align:center;white-space:nowrap}
 .row3 input{padding:10px 2px;text-align:center;font-weight:900;font-size:22px}
-/* CRONO = TAMANO DE MARCADOR DE ARRIBA EN BASKET 0-0 = 56px */
-.crono-solo{background:#0a2540;color:#fff;border-radius:14px;min-height:100px;flex-shrink:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:6px;transition:all .3s}
+/* CRONO = 0-0 DE ARRIBA EN BASKET = 56px */
+.crono-solo{background:#0a2540;color:#fff;border-radius:14px;min-height:100px;flex-shrink:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:6px}
 .crono-solo .fase{font-size:16px;background:#ffb800;color:#000;padding:3px 12px;border-radius:20px;font-weight:900;margin-bottom:2px}
 #tiempo{font-size:56px;font-weight:900;line-height:1;transition:font-size .3s}
 #tiempo small{font-size:22px;color:#aad}
@@ -45,11 +44,14 @@ input,select,textarea{width:100%;padding:10px;border:1.5px solid #dbe6f0;border-
 .result{background:#eaf7ff;border:2px solid #0a7cff;border-radius:12px;padding:8px;text-align:center;display:none;font-size:22px}
 .result b{font-size:44px}
 .small{font-size:18px;color:#666;text-align:center}
-.historial{flex:1;min-height:0;background:#f8fafc;border-radius:12px;padding:8px;display:flex;flex-direction:column;overflow:hidden}
-.historial h3{margin:0;text-align:center;font-size:22px;flex-shrink:0}
-.tabla-wrap{flex:1;overflow-y:auto;min-height:0}
+/* HISTORIAL COMPACTO V10 */
+.historial{flex:0 0 auto;background:#f8fafc;border-radius:12px;padding:8px;display:flex;flex-direction:column}
+.historial h3{margin:0;text-align:center;font-size:22px}
+.tabla-wrap{max-height:140px;overflow-y:auto}
 table{width:100%;border-collapse:collapse;font-size:22px;margin-top:4px}
 th,td{border-bottom:1px solid #e2e8f0;padding:5px 4px;text-align:center;background:#fff}
+/* BORRAR - ARREGLADO: YA NO flex:1, YA NO GIGANTE */
+.btn-borrar{flex:0 0 auto !important;width:100%;margin-top:6px;padding:8px;border:0;border-radius:10px;background:#e5e7eb;color:#111;font-weight:900;font-size:18px;cursor:pointer}
 .hidden{display:none!important}
 #bloqueoRotacion{display:none;position:fixed;inset:0;background:#0a2540;color:#fff;z-index:9999;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:30px;gap:12px}
 #bloqueoRotacion b{font-size:26px}
@@ -80,7 +82,7 @@ th,td{border-bottom:1px solid #e2e8f0;padding:5px 4px;text-align:center;backgrou
 <div><button class="btn-notas" onclick="toggleNotas('notasBoxB')">📝 Notas ▼</button><div id="notasBoxB"><textarea id="notasB" rows="2" placeholder="Escribe notas..."></textarea></div></div>
 <div><button class="btn-calc" onclick="calcular('B')">CALCULAR PASOS</button><div id="resB" class="result" style="margin-top:6px"></div></div>
 </div>
-<div class="historial"><h3>📋 Historial de hoy</h3><div class="tabla-wrap"><table><thead><tr><th>Modo</th><th>NP</th><th>Seg</th><th>Min</th><th>Pasos</th></tr></thead><tbody id="historial"></tbody></table></div><button class="btn-reset btn" style="width:100%;margin-top:6px;padding:8px;font-size:18px" onclick="localStorage.removeItem('sial_pasos');location.reload()">🗑 Borrar historial</button></div>
+<div class="historial"><h3>📋 Historial de hoy</h3><div class="tabla-wrap"><table><thead><tr><th>Modo</th><th>NP</th><th>Seg</th><th>Min</th><th>Pasos</th></tr></thead><tbody id="historial"></tbody></table></div><button class="btn-borrar" onclick="localStorage.removeItem('sial_pasos');location.reload()">🗑 Borrar historial</button></div>
 </div>
 </div>
 <script>
