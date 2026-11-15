@@ -10,47 +10,47 @@
 <style>
 *{box-sizing:border-box}
 html,body{margin:0;padding:0;background:#fff}
-body{font-family:system-ui,Arial;color:#0a2540;font-size:16px}
+body{font-family:system-ui,Arial;color:#0a2540;font-size:20px}
 .app{height:100dvh;display:flex;flex-direction:column;background:#fff;overflow:hidden}
-header{padding:10px 12px 8px;text-align:center;border-bottom:1px solid #e5e7eb;flex-shrink:0}
-header h1{margin:0;font-size:21px}
-header p{margin:2px 0 0;color:#666;font-size:12px}
-.tabs{display:flex;padding:10px 12px 0;gap:8px;flex-shrink:0}
-.tabs button{flex:1;padding:12px;border:0;border-radius:10px;background:#e2e8f0;color:#334155;font-weight:800;font-size:14px}
+header{padding:8px 12px 6px;text-align:center;border-bottom:1px solid #e5e7eb;flex-shrink:0}
+header h1{margin:0;font-size:28px}
+header p{margin:2px 0 0;color:#666;font-size:15px}
+.tabs{display:flex;padding:8px 12px 0;gap:8px;flex-shrink:0}
+.tabs button{flex:1;padding:13px;border:0;border-radius:10px;background:#e2e8f0;color:#334155;font-weight:900;font-size:19px}
 .tabs button.active{background:#0a2540;color:#fff}
-.contenido{flex:1;display:flex;flex-direction:column;padding:12px;gap:10px;overflow:hidden;min-height:0}
-/* ESTO ES LO QUE REPARTE TODO A LO LARGO COMO BASKET */
-.sec{flex:1;display:flex;flex-direction:column;justify-content:space-evenly;gap:10px;min-height:0}
-label{font-weight:800;font-size:13px;display:block;margin-bottom:5px}
-input,select,textarea{width:100%;padding:14px;border:1.5px solid #dbe6f0;border-radius:10px;font-size:16px;background:#f3f8fc;outline:none}
+.contenido{flex:1;display:flex;flex-direction:column;padding:10px 12px;gap:8px;overflow:hidden;min-height:0}
+.sec{flex:1;display:flex;flex-direction:column;justify-content:space-between;gap:8px;min-height:0}
+label{font-weight:900;font-size:18px;display:block;margin-bottom:4px}
+input,select,textarea{width:100%;padding:12px;border:1.5px solid #dbe6f0;border-radius:10px;font-size:22px;background:#f3f8fc;outline:none}
 .row3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
-.row3 label{font-size:11px;text-align:center;white-space:nowrap}
-.row3 input{padding:14px 4px;text-align:center;font-weight:700;font-size:17px}
-.small{font-size:11px;color:#666;text-align:center}
-/* CRONO SOLO CONTADOR - FUERA BOTONES Y RECUADROS */
-.crono-solo{background:#0a2540;color:#fff;border-radius:14px;height:92px;flex-shrink:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
-.crono-solo .fase{font-size:11px;background:#ffb800;color:#000;padding:3px 10px;border-radius:20px;font-weight:800;margin-bottom:4px}
-#tiempo{font-size:44px;font-weight:900;line-height:1}
-#tiempo small{font-size:16px;color:#aad}
+.row3 label{font-size:16px;text-align:center;white-space:nowrap}
+.row3 input{padding:12px 2px;text-align:center;font-weight:900;font-size:32px}
+/* CRONO - 44px normal, 110px al terminar = 150% mas grande */
+.crono-solo{background:#0a2540;color:#fff;border-radius:14px;min-height:110px;flex-shrink:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:6px;transition:all .3s}
+.crono-solo .fase{font-size:15px;background:#ffb800;color:#000;padding:3px 12px;border-radius:20px;font-weight:900;margin-bottom:2px}
+#tiempo{font-size:44px;font-weight:900;line-height:1;transition:font-size .3s}
+#tiempo small{font-size:20px;color:#aad}
+#tiempo.grande{font-size:110px}
+#tiempo.grande small{font-size:44px}
 .crono-btns{display:flex;gap:8px}
-.btn{flex:1;padding:14px;border:0;border-radius:11px;font-weight:900;font-size:15px;cursor:pointer}
+.btn{flex:1;padding:13px;border:0;border-radius:11px;font-weight:900;font-size:20px;cursor:pointer}
 .btn-start{background:#22c55e;color:#fff}
 .btn-stop{background:#f59e0b;color:#000}
 .btn-reset{background:#e5e7eb;color:#111}
-.btn-calc{background:#0a7cff;color:#fff;width:100%;padding:15px;border:0;border-radius:12px;font-weight:900;font-size:17px}
-.btn-notas{background:#f1f5f9;border:1.5px dashed #94a3b8;color:#334155;width:100%;padding:11px;border-radius:10px;font-weight:800}
+.btn-calc{background:#0a7cff;color:#fff;width:100%;padding:14px;border:0;border-radius:12px;font-weight:900;font-size:22px}
+.btn-notas{background:#f1f5f9;border:1.5px dashed #94a3b8;color:#334155;width:100%;padding:10px;border-radius:10px;font-weight:900;font-size:18px}
 #notasBoxA,#notasBoxB{display:none}
-.result{background:#eaf7ff;border:2px solid #0a7cff;border-radius:12px;padding:10px;text-align:center;display:none}
-.result b{font-size:28px}
-/* HISTORIAL ES EL QUE ESTIRA COMO JUGADORES EN BASKET */
-.historial{flex:1;min-height:0;background:#f8fafc;border-radius:12px;padding:10px;display:flex;flex-direction:column;overflow:hidden}
-.historial h3{margin:0;text-align:center;font-size:14px;flex-shrink:0}
+.result{background:#eaf7ff;border:2px solid #0a7cff;border-radius:12px;padding:8px;text-align:center;display:none;font-size:20px}
+.result b{font-size:66px}
+.small{font-size:15px;color:#666;text-align:center}
+.historial{flex:0 0 auto;max-height:190px;background:#f8fafc;border-radius:12px;padding:8px;display:flex;flex-direction:column;overflow:hidden}
+.historial h3{margin:0;text-align:center;font-size:18px;flex-shrink:0}
 .tabla-wrap{flex:1;overflow-y:auto;min-height:0}
-table{width:100%;border-collapse:collapse;font-size:13px;margin-top:6px}
-th,td{border-bottom:1px solid #e2e8f0;padding:7px 4px;text-align:center;background:#fff}
+table{width:100%;border-collapse:collapse;font-size:18px;margin-top:4px}
+th,td{border-bottom:1px solid #e2e8f0;padding:5px 4px;text-align:center;background:#fff}
 .hidden{display:none!important}
 #bloqueoRotacion{display:none;position:fixed;inset:0;background:#0a2540;color:#fff;z-index:9999;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:30px;gap:12px}
-#bloqueoRotacion b{font-size:22px}
+#bloqueoRotacion b{font-size:26px}
 @media (orientation: landscape) and (max-height: 500px){ #bloqueoRotacion{display:flex} }
 </style>
 </head>
@@ -67,7 +67,7 @@ th,td{border-bottom:1px solid #e2e8f0;padding:7px 4px;text-align:center;backgrou
 <div><label>Actividad / Máquina</label><select id="actCaminadora"><option>-- Elegir --</option><option>Caminadora</option><option>Caminadora inclinada</option><option>Elíptica</option></select></div>
 <div class="row3"><div><label>NP</label><input id="npA" type="number" value="50"></div><div><label>Seg 50 pasos</label><input id="segA" type="number" placeholder="Ej: 28"></div><div><label>Tiempo Mov (min)</label><input id="tiempoA" type="number" placeholder="Ej: 30"></div></div>
 <div><button class="btn-notas" onclick="toggleNotas('notasBoxA')">📝 Notas ▼</button><div id="notasBoxA"><textarea id="notasA" rows="2" placeholder="Escribe notas..."></textarea></div></div>
-<div><button class="btn-calc" onclick="calcular('A')">CALCULAR PASOS</button><div id="resA" class="result" style="margin-top:8px"></div></div>
+<div><button class="btn-calc" onclick="calcular('A')">CALCULAR PASOS</button><div id="resA" class="result" style="margin-top:6px"></div></div>
 </div>
 <div id="secCaminando" class="sec hidden">
 <div><label>Actividad / Lugar</label><select id="actCaminando"><option>-- Elegir --</option><option>Caminando en parque</option><option>Caminando en calle</option><option>Caminando en casa</option><option>Caminando en trabajo</option></select></div>
@@ -76,9 +76,9 @@ th,td{border-bottom:1px solid #e2e8f0;padding:7px 4px;text-align:center;backgrou
 <div class="small" id="cronoAyuda">Dale INICIAR, camina 50 pasos y dale DETENER</div>
 <div class="row3"><div><label>NP</label><input id="npB" type="number" value="50"></div><div><label>Seg 50 pasos</label><input id="segB" type="number" placeholder="Auto"></div><div><label>Tiempo Mov (min)</label><input id="tiempoB" type="number" placeholder="Ej: 30"></div></div>
 <div><button class="btn-notas" onclick="toggleNotas('notasBoxB')">📝 Notas ▼</button><div id="notasBoxB"><textarea id="notasB" rows="2" placeholder="Escribe notas..."></textarea></div></div>
-<div><button class="btn-calc" onclick="calcular('B')">CALCULAR PASOS</button><div id="resB" class="result" style="margin-top:8px"></div></div>
+<div><button class="btn-calc" onclick="calcular('B')">CALCULAR PASOS</button><div id="resB" class="result" style="margin-top:6px"></div></div>
 </div>
-<div class="historial"><h3>📋 Historial de hoy</h3><div class="tabla-wrap"><table><thead><tr><th>Modo</th><th>NP</th><th>Seg</th><th>Min</th><th>Pasos</th></tr></thead><tbody id="historial"></tbody></table></div><button class="btn-reset btn" style="width:100%;margin-top:8px" onclick="localStorage.removeItem('sial_pasos');location.reload()">🗑 Borrar historial</button></div>
+<div class="historial"><h3>📋 Historial de hoy</h3><div class="tabla-wrap"><table><thead><tr><th>Modo</th><th>NP</th><th>Seg</th><th>Min</th><th>Pasos</th></tr></thead><tbody id="historial"></tbody></table></div><button class="btn-reset btn" style="width:100%;margin-top:6px;padding:8px;font-size:16px" onclick="localStorage.removeItem('sial_pasos');location.reload()">🗑 Borrar historial</button></div>
 </div>
 </div>
 <script>
@@ -89,8 +89,20 @@ window.addEventListener('load', intentarBloquear);
 let fase=1, corriendo=false, acumulado=0, inicio=0, timer=null;
 function fmt(ms){let s=ms/1000;let m=Math.floor(s/60);let ss=Math.floor(s%60);let d=Math.floor((ms%1000)/100);return String(m).padStart(2,'0')+':'+String(ss).padStart(2,'0')+'<small>.'+d+'</small>';}
 function pintar(){let ahora=corriendo?acumulado+(Date.now()-inicio):acumulado;document.getElementById('tiempo').innerHTML=fmt(ahora);}
-function accionCrono(){intentarBloquear();if(fase===1){if(!corriendo){corriendo=true;inicio=Date.now();timer=setInterval(pintar,100);document.getElementById('btnCrono').textContent='⏸ DETENER';document.getElementById('btnCrono').className='btn btn-stop';}else{let total=acumulado+(Date.now()-inicio);clearInterval(timer);corriendo=false;acumulado=0;let seg=(total/1000).toFixed(1);document.getElementById('segB').value=seg;fase=2;document.getElementById('tiempo').innerHTML='00:00<small>.0</small>';document.getElementById('faseTxt').textContent='MOMENTO 2 - TIEMPO CAMINANDO';document.getElementById('cronoAyuda').textContent='Ahora mide tu caminata. Puedes pausar y seguir. Seg 50 pasos ya quedó: '+seg+' seg';document.getElementById('btnCrono').textContent='▶ INICIAR';document.getElementById('btnCrono').className='btn btn-start';}}else{if(!corriendo){corriendo=true;inicio=Date.now();timer=setInterval(pintar,100);document.getElementById('btnCrono').textContent='⏸ PAUSA';document.getElementById('btnCrono').className='btn btn-stop';}else{acumulado+=(Date.now()-inicio);clearInterval(timer);corriendo=false;document.getElementById('btnCrono').textContent='▶ INICIAR';document.getElementById('btnCrono').className='btn btn-start';}}}
-function reiniciarCrono(){clearInterval(timer);corriendo=false;acumulado=0;fase=1;document.getElementById('tiempo').innerHTML='00:00<small>.0</small>';document.getElementById('faseTxt').textContent='MOMENTO 1 - 50 PASOS';document.getElementById('cronoAyuda').textContent='Dale INICIAR, camina 50 pasos y dale DETENER';document.getElementById('btnCrono').textContent='▶ INICIAR';document.getElementById('btnCrono').className='btn btn-start';}
+function agrandarCronoFinal(segFinal){
+  let el=document.getElementById('tiempo');
+  el.innerHTML=fmt(segFinal*1000);
+  el.classList.add('grande');
+  setTimeout(()=>{ el.classList.remove('grande'); }, 2500);
+}
+function accionCrono(){intentarBloquear();if(fase===1){if(!corriendo){corriendo=true;inicio=Date.now();timer=setInterval(pintar,100);document.getElementById('btnCrono').textContent='⏸ DETENER';document.getElementById('btnCrono').className='btn btn-stop';}else{let total=acumulado+(Date.now()-inicio);clearInterval(timer);corriendo=false;acumulado=0;let seg=(total/1000).toFixed(1);document.getElementById('segB').value=seg;fase=2;
+  // AL TERMINAR MOMENTO 1 - 150% MAS GRANDE
+  agrandarCronoFinal(total/1000);
+  document.getElementById('faseTxt').textContent='MOMENTO 2 - TIEMPO CAMINANDO';document.getElementById('cronoAyuda').textContent='Ya quedó: '+seg+' seg - Ahora mide tu caminata';document.getElementById('btnCrono').textContent='▶ INICIAR';document.getElementById('btnCrono').className='btn btn-start';}}else{if(!corriendo){corriendo=true;inicio=Date.now();timer=setInterval(pintar,100);document.getElementById('btnCrono').textContent='⏸ PAUSA';document.getElementById('btnCrono').className='btn btn-stop';}else{acumulado+=(Date.now()-inicio);clearInterval(timer);corriendo=false;
+  // AL PAUSAR / TERMINAR MOMENTO 2 - TAMBIEN 150% MAS GRANDE
+  agrandarCronoFinal(acumulado/1000);
+  document.getElementById('btnCrono').textContent='▶ INICIAR';document.getElementById('btnCrono').className='btn btn-start';}}}
+function reiniciarCrono(){clearInterval(timer);corriendo=false;acumulado=0;fase=1;let el=document.getElementById('tiempo');el.classList.remove('grande');el.innerHTML='00:00<small>.0</small>';document.getElementById('faseTxt').textContent='MOMENTO 1 - 50 PASOS';document.getElementById('cronoAyuda').textContent='Dale INICIAR, camina 50 pasos y dale DETENER';document.getElementById('btnCrono').textContent='▶ INICIAR';document.getElementById('btnCrono').className='btn btn-start';}
 function cambiar(m){let a=document.getElementById('secCaminadora');let b=document.getElementById('secCaminando');if(m==='caminadora'){a.classList.remove('hidden');b.classList.add('hidden');}else{b.classList.remove('hidden');a.classList.add('hidden');}document.getElementById('tabCaminadora').classList.toggle('active',m==='caminadora');document.getElementById('tabCaminando').classList.toggle('active',m==='caminando');}
 function toggleNotas(boxId){let b=document.getElementById(boxId);b.style.display=b.style.display==='block'?'none':'block';}
 function calcular(letra){let np=parseFloat(document.getElementById('np'+letra).value)||0;let seg=parseFloat(document.getElementById('seg'+letra).value)||0;let min=parseFloat(document.getElementById('tiempo'+letra).value)||0;if(!np||!seg||!min){alert('Llena NP, Seg 50 pasos y Tiempo en Movimiento');return;}let pasosMin=np/(seg/60);let total=Math.round(pasosMin*min);let res=document.getElementById('res'+letra);res.style.display='block';res.innerHTML='Pasos totales<br><b>'+total.toLocaleString()+'</b><br>'+Math.round(pasosMin)+' pasos / min &nbsp;|&nbsp; '+np+' pasos en '+seg+' seg';let h=JSON.parse(localStorage.getItem('sial_pasos')||'[]');h.unshift({modo:letra==='A'?'Caminadora':'Caminando',np,seg,min,pasos:total});localStorage.setItem('sial_pasos',JSON.stringify(h));mostrar();}
