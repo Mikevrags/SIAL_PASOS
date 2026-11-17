@@ -6,43 +6,45 @@
 <title>SIAL • Pasos</title>
 <style>
 *{box-sizing:border-box;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
-body{margin:0;background:#0a2a4a;color:#0a2a4a;padding:12px 12px 30px}
-.top{text-align:center;margin:4px 0 12px}
-.top img{width:150px;max-width:70%;display:block;margin:0 auto 2px;filter:drop-shadow(0 4px 12px rgba(0,0,0,.4))}
-.top h1{margin:2px 0 0;font-size:30px;color:#fff;letter-spacing:.5px}
+body{margin:0;background:#0a2a4a;color:#0a2a4a;padding:16px 16px 40px}
+.top{text-align:center;margin:6px 0 16px}
+.top img{width:300px;max-width:85%;display:block;margin:0 auto 4px;filter:drop-shadow(0 4px 12px rgba(0,0,0,.4))}
+.top h1{margin:4px 0 0;font-size:60px;color:#fff;letter-spacing:.5px;line-height:1.1}
 .top h1 span{color:#2ea5ff}
-.top p{margin:2px 0 0;font-size:13px;color:#cfe8ff}
-.tabs{display:flex;gap:8px;margin-bottom:12px}
-.tabs button{flex:1;border:0;border-radius:12px;padding:12px 6px;font-weight:800;font-size:15px;background:#123f66;color:white;cursor:pointer}
+.top p{margin:4px 0 0;font-size:26px;color:#cfe8ff}
+.tabs{display:flex;gap:12px;margin-bottom:16px}
+.tabs button{flex:1;border:0;border-radius:16px;padding:22px 8px;font-weight:800;font-size:30px;background:#123f66;color:white;cursor:pointer}
 .tabs button.active{background:white;color:#0a2a4a}
-.card{background:white;border-radius:18px;padding:14px;margin-bottom:12px;box-shadow:0 4px 14px rgba(0,0,0,.18)}
-label{font-weight:800;font-size:13px;display:block;margin:8px 0 6px}
-.row{display:flex;gap:8px}.row>div{flex:1}
-select,input,textarea{width:100%;border:1.5px solid #dbeaf6;background:#f3f9ff;border-radius:10px;padding:12px;font-size:15px;color:#0a2a4a;outline:none}
+.card{background:white;border-radius:22px;padding:22px;margin-bottom:16px;box-shadow:0 4px 14px rgba(0,0,0,.18)}
+label{font-weight:800;font-size:26px;display:block;margin:14px 0 10px}
+.row{display:flex;gap:12px}.row>div{flex:1}
+select,input,textarea{width:100%;border:3px solid #dbeaf6;background:#f3f9ff;border-radius:14px;padding:22px;font-size:30px;color:#0a2a4a;outline:none}
 select:focus,input:focus,textarea:focus{border-color:#2ea5ff;background:white}
-.mode{display:flex;background:#eef5ff;border-radius:12px;padding:4px;gap:4px}
-.mode button{flex:1;border:0;border-radius:9px;padding:12px;font-weight:800;font-size:15px;cursor:pointer;background:transparent}
+.mode{display:flex;background:#eef5ff;border-radius:16px;padding:6px;gap:6px}
+.mode button{flex:1;border:0;border-radius:12px;padding:22px;font-weight:800;font-size:30px;cursor:pointer;background:transparent}
 .mode button.active{background:#0a2a4a;color:white}
-.chrono{font-size:56px;font-weight:900;text-align:center;margin:2px 0 10px;letter-spacing:-1px}
-.btns{display:flex;gap:8px}
-.btn{flex:1;border:0;border-radius:12px;padding:14px;font-weight:900;font-size:16px;cursor:pointer}
+.chrono{font-size:110px;font-weight:900;text-align:center;margin:4px 0 16px;letter-spacing:-2px;line-height:1}
+.btns{display:flex;gap:12px}
+.btn{flex:1;border:0;border-radius:16px;padding:24px;font-weight:900;font-size:32px;cursor:pointer}
 .btn-blue{background:#35c6ff;color:#0a2a4a}.btn-dark{background:#0a2a4a;color:white}
-.btn-primary{background:#187bff;color:white;width:100%;margin-top:10px}
-.btn-save{background:#35c6ff;color:#0a2a4a;width:100%;margin-top:8px}
-.btn-green{background:#1fb35a;color:white;width:100%;margin-top:8px}
-.stats{display:flex;gap:8px;margin-top:10px}
-.stat{flex:1;background:#0a2a4a;color:white;border-radius:12px;padding:12px;text-align:center}
-.stat b{font-size:26px;display:block}
-.result{display:flex;gap:8px;margin-top:12px}
-.result div{flex:1;background:#0a2a4a;color:white;border-radius:12px;padding:12px 6px;text-align:center}
-.result small{font-size:11px;opacity:.8}
-.result b{font-size:18px;display:block;margin-top:3px}
-.hint{font-size:12px;color:#7a93a8;margin-top:6px}
-table{width:100%;border-collapse:collapse;font-size:13px}th,td{padding:8px 6px;border-bottom:1px solid #eee;text-align:left}th{background:#0a2a4a;color:white}
-.item{border-bottom:1px solid #eee;padding:10px 2px;display:flex;justify-content:space-between;gap:8px}
-.item small{color:#7a93a8}
-.del{border:0;background:#ffe8e8;color:#c00;border-radius:8px;padding:8px 10px;font-weight:800}
-.hidden{display:none}.footer{text-align:center;color:#6a8aa8;font-size:11px;margin-top:6px}
+.btn-primary{background:#187bff;color:white;width:100%;margin-top:14px}
+.btn-save{background:#35c6ff;color:#0a2a4a;width:100%;margin-top:12px}
+.btn-green{background:#1fb35a;color:white;width:100%;margin-top:12px}
+.stats{display:flex;gap:12px;margin-top:14px}
+.stat{flex:1;background:#0a2a4a;color:white;border-radius:16px;padding:20px;text-align:center}
+.stat small{font-size:26px}
+.stat b{font-size:52px;display:block}
+.result{display:flex;gap:12px;margin-top:16px}
+.result div{flex:1;background:#0a2a4a;color:white;border-radius:16px;padding:20px 8px;text-align:center}
+.result small{font-size:22px;opacity:.8}
+.result b{font-size:36px;display:block;margin-top:6px}
+.hint{font-size:24px;color:#7a93a8;margin-top:8px}
+table{width:100%;border-collapse:collapse;font-size:26px}th,td{padding:14px 8px;border-bottom:1px solid #eee;text-align:left}th{background:#0a2a4a;color:white}
+.item{border-bottom:1px solid #eee;padding:16px 2px;display:flex;justify-content:space-between;gap:12px}
+.item b{font-size:30px}
+.item small{color:#7a93a8;font-size:24px}
+.del{border:0;background:#ffe8e8;color:#c00;border-radius:10px;padding:14px 16px;font-weight:800;font-size:26px}
+.hidden{display:none}.footer{text-align:center;color:#6a8aa8;font-size:22px;margin-top:8px}
 </style>
 </head>
 <body>
@@ -59,10 +61,9 @@ table{width:100%;border-collapse:collapse;font-size:13px}th,td{padding:8px 6px;b
 <button id="tabTab" onclick="show('tab')">⚙️ Tabla</button>
 </div>
 
-<!-- CALCULAR -->
 <div id="view-cal">
   <div class="card">
-    <div class="row"><div><label>Usuario</label><select id="userSel"></select></div><div><label>&nbsp;</label><button class="btn btn-dark" style="width:100%;padding:12px" onclick="newUser()">+ Nuevo</button></div></div>
+    <div class="row"><div><label>Usuario</label><select id="userSel"></select></div><div><label>&nbsp;</label><button class="btn btn-dark" style="width:100%;padding:22px" onclick="newUser()">+ Nuevo</button></div></div>
     <label>Modo</label>
     <div class="mode"><button id="mCaminadora" class="active" onclick="setMode('Caminadora')">🏃 Caminadora</button><button id="mCaminando" onclick="setMode('Caminando')">🚶 Caminando</button></div>
   </div>
@@ -97,11 +98,9 @@ table{width:100%;border-collapse:collapse;font-size:13px}th,td{padding:8px 6px;b
   </div>
 </div>
 
-<!-- HISTORIAL -->
 <div id="view-his" class="hidden"><div class="card"><label>Historial</label><div id="histList"></div><button class="btn btn-dark" style="width:100%;margin-top:10px" onclick="clearAll()">Borrar todo</button></div></div>
 
-<!-- TABLA -->
-<div id="view-tab" class="hidden"><div class="card"><label>Tabla de velocidades - Editable</label><table><tr><th>No.</th><th>Seg 50</th><th>PxMin</th><th></th></tr><tbody id="tablaBody"></tbody></table><div class="row" style="margin-top:10px"><div><input id="newSeg" type="number" placeholder="Seg 50 pasos"></div><div><button class="btn btn-dark" onclick="addVel()">+ Agregar</button></div></div><p class="hint">PxMin = 50 x 60 / Seg 50</p></div></div>
+<div id="view-tab" class="hidden"><div class="card"><label>Tabla de velocidades - Editable</label><table><tr><th>No.</th><th>Seg 50</th><th>PxMin</th><th></th></tr><tbody id="tablaBody"></tbody></table><div class="row" style="margin-top:14px"><div><input id="newSeg" type="number" placeholder="Seg 50 pasos"></div><div><button class="btn btn-dark" onclick="addVel()">+ Agregar</button></div></div><p class="hint">PxMin = 50 x 60 / Seg 50</p></div></div>
 
 <div class="footer">SIAL • Sin internet • Guarda en tu celular</div>
 
@@ -110,7 +109,6 @@ let users=JSON.parse(localStorage.getItem('sial_users')||'["Yo"]');
 let records=JSON.parse(localStorage.getItem('sial_records')||'[]');
 let vels=JSON.parse(localStorage.getItem('sial_vels')||'[[1,42],[2,38],[3,34],[4,30],[5,26],[6,22]]');
 let mode='Caminadora', timer=null, startAt=0, elapsed=0, running=false;
-
 function renderUsers(){document.getElementById('userSel').innerHTML=users.map(u=>`<option>${u}</option>`).join('')}
 function setMode(m){mode=m;document.getElementById('mCaminadora').classList.toggle('active',m==='Caminadora');document.getElementById('mCaminando').classList.toggle('active',m==='Caminando')}
 function newUser(){let n=prompt('Nombre del usuario:');if(!n)return;if(!users.includes(n))users.push(n);localStorage.setItem('sial_users',JSON.stringify(users));renderUsers();document.getElementById('userSel').value=n;updateToday()}
@@ -118,7 +116,7 @@ function fmt(ms){let s=ms/1000;let m=Math.floor(s/60);let sec=s%60;return String
 function toggleTimer(){if(!running){running=true;startAt=Date.now()-elapsed;timer=setInterval(()=>{elapsed=Date.now()-startAt;document.getElementById('chrono').textContent=fmt(elapsed)},50);document.getElementById('btnStart').textContent='⏸ PAUSAR'}else{running=false;clearInterval(timer);document.getElementById('btnStart').textContent='▶ SEGUIR'}}
 function resetTimer(){running=false;clearInterval(timer);elapsed=0;document.getElementById('chrono').textContent='00:00.0';document.getElementById('btnStart').textContent='▶ INICIAR'}
 function useTime(){let seg=elapsed/1000;if(seg<=0){alert('Primero mide con el cronómetro');return}document.getElementById('seg').value=seg.toFixed(1);calc()}
-function renderVels(){document.getElementById('velSel').innerHTML=vels.map((v,i)=>`<option value="${i}">No. ${v[0]} - Vel ${v[0]} - ${v[1]} seg</option>`).join('');document.getElementById('tablaBody').innerHTML=vels.map((v,i)=>`<tr><td>No. ${v[0]}</td><td><input type="number" value="${v[1]}" onchange="editVel(${i},this.value)" style="width:80px"></td><td>${(50*60/v[1]).toFixed(1)}</td><td><button class="btn btn-dark" style="padding:8px" onclick="useVel(${i})">Usar</button> <button class="del" onclick="delVel(${i})">X</button></td></tr>`).join('')}
+function renderVels(){document.getElementById('velSel').innerHTML=vels.map((v,i)=>`<option value="${i}">No. ${v[0]} - Vel ${v[0]} - ${v[1]} seg</option>`).join('');document.getElementById('tablaBody').innerHTML=vels.map((v,i)=>`<tr><td>No. ${v[0]}</td><td><input type="number" value="${v[1]}" onchange="editVel(${i},this.value)" style="width:110px"></td><td>${(50*60/v[1]).toFixed(1)}</td><td><button class="btn btn-dark" style="padding:12px" onclick="useVel(${i})">Usar</button> <button class="del" onclick="delVel(${i})">X</button></td></tr>`).join('')}
 function applyVel(){let i=document.getElementById('velSel').value;document.getElementById('seg').value=vels[i][1];calc()}
 function editVel(i,val){vels[i][1]=parseFloat(val)||42;localStorage.setItem('sial_vels',JSON.stringify(vels));renderVels();calc()}
 function addVel(){let s=parseFloat(document.getElementById('newSeg').value);if(!s)return;vels.push([vels.length+1,s]);localStorage.setItem('sial_vels',JSON.stringify(vels));renderVels()}
@@ -127,7 +125,7 @@ function useVel(i){document.getElementById('seg').value=vels[i][1];document.getE
 function calc(){let np=parseFloat(document.getElementById('np').value)||50;let seg=parseFloat(document.getElementById('seg').value)||0;let tm=parseFloat(document.getElementById('tiempoMov').value)||0;if(!seg)return;let pxMin=np*60/seg;let pasos=(tm*60/seg)*np;let tpMin=seg/np;document.getElementById('rTP').textContent=tpMin.toFixed(2);document.getElementById('rPx').textContent=pxMin.toFixed(1);document.getElementById('rPasos').textContent=Math.round(pasos);return{pxMin,pasos,tpMin}}
 function save(){let r=calc();if(!r)return;let rec={fecha:new Date().toLocaleDateString('es-MX'),hora:new Date().toLocaleTimeString('es-MX',{hour:'2-digit',minute:'2-digit'}),usuario:document.getElementById('userSel').value,modo:mode,nombre:document.getElementById('nombre').value||'Sin nombre',np:document.getElementById('np').value,seg:document.getElementById('seg').value,tm:document.getElementById('tiempoMov').value||0,notas:document.getElementById('notas').value,px:r.pxMin,pasos:Math.round(r.pasos),tp:r.tpMin};records.unshift(rec);localStorage.setItem('sial_records',JSON.stringify(records));alert('Guardado: '+rec.pasos+' pasos');updateToday();renderHist()}
 function updateToday(){let today=new Date().toLocaleDateString('es-MX');let u=document.getElementById('userSel').value;let list=records.filter(r=>r.fecha===today&&r.usuario===u);document.getElementById('todayLabel').textContent='Hoy • '+u;document.getElementById('pasosHoy').textContent=list.reduce((a,b)=>a+b.pasos,0);document.getElementById('regHoy').textContent=list.length}
-function renderHist(){let el=document.getElementById('histList');if(!records.length){el.innerHTML='<p style="color:#888">Sin registros todavía.</p>';return}el.innerHTML=records.map((r,i)=>`<div class="item"><div><b>${r.nombre} • ${r.pasos} pasos</b><br><small>${r.fecha} ${r.hora} • ${r.usuario} • ${r.modo} • ${r.tm} min • ${r.seg}s / 50 pasos • PxMin ${r.px.toFixed(1)}</small><br><small>${r.notas||''}</small></div><button class="del" onclick="delRec(${i})">X</button></div>`).join('')}
+function renderHist(){let el=document.getElementById('histList');if(!records.length){el.innerHTML='<p style="color:#888;font-size:26px">Sin registros todavía.</p>';return}el.innerHTML=records.map((r,i)=>`<div class="item"><div><b>${r.nombre} • ${r.pasos} pasos</b><br><small>${r.fecha} ${r.hora} • ${r.usuario} • ${r.modo} • ${r.tm} min • ${r.seg}s / 50 pasos • PxMin ${r.px.toFixed(1)}</small><br><small>${r.notas||''}</small></div><button class="del" onclick="delRec(${i})">X</button></div>`).join('')}
 function delRec(i){records.splice(i,1);localStorage.setItem('sial_records',JSON.stringify(records));updateToday();renderHist()}
 function clearAll(){if(confirm('¿Borrar todo?')){records=[];localStorage.setItem('sial_records','[]');updateToday();renderHist()}}
 function exportExcel(){if(!records.length){alert('No hay registros');return}let csv='Fecha,Hora,Usuario,Modo,Nombre,NP,Seg 50,Tiempo Mov,Notas,PxMin,TPxMin,PASOS\n'+records.map(r=>[r.fecha,r.hora,r.usuario,r.modo,r.nombre,r.np,r.seg,r.tm,'"'+r.notas.replace(/"/g,'')+'"',r.px.toFixed(1),r.tp.toFixed(2),r.pasos].join(',')).join('\n');let blob=new Blob(['\ufeff'+csv],{type:'text/csv'});let a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='SIAL_Pasos.csv';a.click()}
