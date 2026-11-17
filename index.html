@@ -16,6 +16,8 @@ body{margin:0;background:#0a2a4a;color:#0a2a4a;padding:16px 16px 40px}
 .tabs button{flex:1;border:0;border-radius:16px;padding:22px 8px;font-weight:800;font-size:30px;background:#123f66;color:white;cursor:pointer}
 .tabs button.active{background:white;color:#0a2a4a}
 .card{background:white;border-radius:22px;padding:22px;margin-bottom:16px;box-shadow:0 4px 14px rgba(0,0,0,.18)}
+/* ZONA MEDIA COMPACTA */
+.card-mid{padding:14px 16px 12px}
 label{font-weight:800;font-size:26px;display:block;margin:14px 0 10px}
 .row{display:flex;gap:12px}.row>div{flex:1}
 select,input,textarea{width:100%;border:3px solid #dbeaf6;background:#f3f9ff;border-radius:14px;padding:22px;font-size:30px;color:#0a2a4a;outline:none}
@@ -34,11 +36,18 @@ select:focus,input:focus,textarea:focus{border-color:#2ea5ff;background:white}
 .stat{flex:1;background:#0a2a4a;color:white;border-radius:16px;padding:20px;text-align:center}
 .stat small{font-size:26px}
 .stat b{font-size:52px;display:block}
-.result{display:flex;gap:12px;margin-top:16px}
-.result div{flex:1;background:#0a2a4a;color:white;border-radius:16px;padding:20px 8px;text-align:center}
+.result{display:flex;gap:12px;margin-top:10px}
+.result div{flex:1;background:#0a2a4a;color:white;border-radius:16px;padding:14px 6px;text-align:center}
 .result small{font-size:22px;opacity:.8}
-.result b{font-size:36px;display:block;margin-top:6px}
-.hint{font-size:24px;color:#7a93a8;margin-top:8px}
+.result b{font-size:36px;display:block;margin-top:4px}
+.hint{font-size:22px;color:#7a93a8;margin:6px 0 0}
+/* FILA DE 3 - MISMO TAMAÑO QUE BOTONES DE ABAJO */
+.row3{display:flex;gap:8px}
+.row3>div{flex:1;min-width:0}
+.row3 label{font-size:32px;margin:6px 0 6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.row3 input{font-size:32px;font-weight:800;padding:14px 8px;text-align:center}
+/* NOTAS OCULTO */
+.notas-hidden{display:none}
 table{width:100%;border-collapse:collapse;font-size:26px}th,td{padding:14px 8px;border-bottom:1px solid #eee;text-align:left}th{background:#0a2a4a;color:white}
 .item{border-bottom:1px solid #eee;padding:16px 2px;display:flex;justify-content:space-between;gap:12px}
 .item b{font-size:30px}
@@ -77,15 +86,18 @@ table{width:100%;border-collapse:collapse;font-size:26px}th,td{padding:14px 8px;
     <button class="btn btn-primary" onclick="useTime()">⬇ USAR ESTE TIEMPO EN EL CÁLCULO</button>
   </div>
 
-  <div class="card">
-    <label>Velocidad (No.)</label>
+  <!-- ZONA MEDIA REDUCIDA -->
+  <div class="card card-mid">
+    <label style="margin-top:0">Velocidad (No.)</label>
     <select id="velSel" onchange="applyVel()"></select>
-    <div class="row"><div><label>NP</label><input id="np" type="number" value="50"></div><div><label>Seg 50 pasos</label><input id="seg" type="number" value="42" step="0.1"></div></div>
-    <p class="hint">(Tiempo Mov x 60 / Seg 50) x NP</p>
-    <label>Tiempo en Movimiento (min)</label>
-    <input id="tiempoMov" type="number" placeholder="Ej: 30">
-    <label>Notas</label>
-    <textarea id="notas" rows="2"></textarea>
+    <div class="row3">
+      <div><label>NP</label><input id="np" type="number" value="50"></div>
+      <div><label>Seg 50 pasos</label><input id="seg" type="number" value="42" step="0.1"></div>
+      <div><label>Tmpo Mov</label><input id="tiempoMov" type="number" placeholder="30"></div>
+    </div>
+    <p class="hint">(Tmpo Mov x 60 / Seg 50) x NP</p>
+    <!-- NOTAS OCULTO PERO SIGUE FUNCIONANDO -->
+    <div class="notas-hidden"><label>Notas</label><textarea id="notas" rows="2"></textarea></div>
     <div class="result"><div><small>TPxMin</small><b id="rTP">-</b></div><div><small>PxMin</small><b id="rPx">-</b></div><div><small>PASOS</small><b id="rPasos">-</b></div></div>
     <button class="btn btn-primary" onclick="calc()">CALCULAR</button>
     <button class="btn btn-save" onclick="save()">✅ GUARDAR REGISTRO</button>
