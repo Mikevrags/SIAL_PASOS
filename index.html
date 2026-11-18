@@ -7,31 +7,30 @@
 <style>
 *{box-sizing:border-box;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
 body{margin:0;background:#0a2a4a;color:#0a2a4a;padding:8px 10px 12px}
-/* HEADER SIN LOGO - COMPACTO */
 .top{text-align:center;margin:2px 0 8px}
 .top h1{margin:0;font-size:34px;color:#fff;letter-spacing:.5px;line-height:1.1}
 .top h1 span{color:#2ea5ff}
 .top p{margin:2px 0 0;font-size:16px;color:#cfe8ff}
 .tabs{display:flex;gap:8px;margin-bottom:8px}
-.tabs button{flex:1;border:0;border-radius:12px;padding:12px 6px;font-weight:800;font-size:20px;background:#123f66;color:white;cursor:pointer}
+.tabs button{flex:1;border:0;border-radius:12px;padding:18px 6px;font-weight:800;font-size:20px;background:#123f66;color:white;cursor:pointer}
 .tabs button.active{background:white;color:#0a2a4a}
 .card{background:white;border-radius:16px;padding:12px;margin-bottom:8px;box-shadow:0 4px 14px rgba(0,0,0,.18)}
 label{font-weight:800;font-size:17px;display:block;margin:8px 0 5px}
 .row{display:flex;gap:8px}.row>div{flex:1}
-select,input,textarea{width:100%;border:2px solid #dbeaf6;background:#f3f9ff;border-radius:10px;padding:12px;font-size:20px;color:#0a2a4a;outline:none}
+select,input,textarea{width:100%;border:2px solid #dbeaf6;background:#f3f9ff;border-radius:10px;padding:14px;font-size:20px;color:#0a2a4a;outline:none}
 select:focus,input:focus,textarea:focus{border-color:#2ea5ff;background:white}
 .mode{display:flex;background:#eef5ff;border-radius:12px;padding:4px;gap:4px}
-.mode button{flex:1;border:0;border-radius:9px;padding:12px;font-weight:800;font-size:19px;cursor:pointer;background:transparent}
+.mode button{flex:1;border:0;border-radius:9px;padding:18px 6px;font-weight:800;font-size:19px;cursor:pointer;background:transparent}
 .mode button.active{background:#0a2a4a;color:white}
 .chrono{font-size:68px;font-weight:900;text-align:center;margin:0 0 8px;letter-spacing:-2px;line-height:1}
 .btns{display:flex;gap:8px}
-.btn{flex:1;border:0;border-radius:12px;padding:13px;font-weight:900;font-size:20px;cursor:pointer}
+.btn{flex:1;border:0;border-radius:12px;padding:20px 10px;font-weight:900;font-size:20px;cursor:pointer;min-height:58px}
 .btn-blue{background:#35c6ff;color:#0a2a4a}.btn-dark{background:#0a2a4a;color:white}
 .btn-primary{background:#187bff;color:white;width:100%;margin-top:8px}
 .btn-save{background:#35c6ff;color:#0a2a4a;width:100%;margin-top:8px}
 .btn-green{background:#1fb35a;color:white;width:100%;margin-top:8px}
 .stats{display:flex;gap:8px;margin-top:8px}
-.stat{flex:1;background:#0a2a4a;color:white;border-radius:12px;padding:10px;text-align:center}
+.stat{flex:1;background:#0a2a4a;color:white;border-radius:12px;padding:12px;text-align:center}
 .stat small{font-size:16px}
 .stat b{font-size:32px;display:block}
 .result{display:flex;gap:8px;margin-top:8px}
@@ -39,11 +38,10 @@ select:focus,input:focus,textarea:focus{border-color:#2ea5ff;background:white}
 .result small{font-size:14px;opacity:.8}
 .result b{font-size:22px;display:block;margin-top:2px}
 .hint{font-size:14px;color:#7a93a8;margin:4px 0 0}
-/* FILA DE 3 - MISMO TAMAÑO QUE BOTONES */
 .row3{display:flex;gap:6px}
 .row3>div{flex:1;min-width:0}
 .row3 label{font-size:20px;margin:4px 0 4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.row3 input{font-size:20px;font-weight:800;padding:10px 4px;text-align:center}
+.row3 input{font-size:20px;font-weight:800;padding:12px 4px;text-align:center}
 .notas-hidden{display:none}
 table{width:100%;border-collapse:collapse;font-size:20px}th,td{padding:10px 6px;border-bottom:1px solid #eee;text-align:left}th{background:#0a2a4a;color:white}
 .item{border-bottom:1px solid #eee;padding:10px 2px;display:flex;justify-content:space-between;gap:8px}
@@ -69,7 +67,7 @@ table{width:100%;border-collapse:collapse;font-size:20px}th,td{padding:10px 6px;
 
 <div id="view-cal">
   <div class="card">
-    <div class="row"><div><label style="margin-top:0">Usuario</label><select id="userSel"></select></div><div><label style="margin-top:0">&nbsp;</label><button class="btn btn-dark" style="width:100%;padding:12px" onclick="newUser()">+ Nuevo</button></div></div>
+    <div class="row"><div><label style="margin-top:0">Usuario</label><select id="userSel"></select></div><div><label style="margin-top:0">&nbsp;</label><button class="btn btn-dark" style="width:100%" onclick="newUser()">+ Nuevo</button></div></div>
     <label>Modo</label>
     <div class="mode"><button id="mCaminadora" class="active" onclick="setMode('Caminadora')">🏃 Caminadora</button><button id="mCaminando" onclick="setMode('Caminando')">🚶 Caminando</button></div>
   </div>
@@ -89,7 +87,7 @@ table{width:100%;border-collapse:collapse;font-size:20px}th,td{padding:10px 6px;
     <div class="row3">
       <div><label>NP</label><input id="np" type="number" value="50" oninput="calc()"></div>
       <div><label>Seg 50 pasos</label><input id="seg" type="number" value="42" step="0.1" oninput="calc()"></div>
-      <div><label>Tmpo Mov</label><input id="tiempoMov" type="number" placeholder="30" oninput="calc()"></div>
+      <div><label>Tmpo Mov</label><input id="tiempoMov" type="number" value="30" oninput="calc()"></div>
     </div>
     <p class="hint">(Tmpo Mov x 60 / Seg 50) x NP</p>
     <div class="notas-hidden"><label>Notas</label><textarea id="notas" rows="2"></textarea></div>
