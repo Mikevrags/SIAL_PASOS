@@ -2,149 +2,147 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>SIAL • Pasos</title>
+/* PARCHE V4 - LETRA CHICA MAS GRANDE */
+label{font-size:17px !important;line-height:1.3}
+small{font-size:14px !important;line-height:1.3}
+.card small{font-size:14px !important}
+.mini small,.stats small{font-size:13px !important}
+header p{font-size:14px !important}
+.footer{font-size:13px !important}
+input::placeholder{font-size:16px !important}  
 <style>
 *{box-sizing:border-box;margin:0;padding:0;font-family:system-ui,Arial,sans-serif}
-body{background:#8fc1f0;min-height:100dvh;display:flex;flex-direction:column;gap:14px;padding:10px;padding-bottom:8px;justify-content:space-between}
-header{text-align:center;padding-top:6px}
-header h1{font-size:32px}
-header h1 span{color:#0b4a9e}
-header p{font-size:14px;margin-top:2px}
-.tabs{display:flex;gap:10px}
-.tab{flex:1;height:84px;min-height:84px;border:0;border-radius:14px;font-size:19px;font-weight:800;cursor:pointer;background:#a8d0f7}
-.tab.active{background:#fff}
-.card{background:#eef4fb;flex:1;border-radius:16px;padding:14px;display:flex;flex-direction:column;gap:12px;justify-content:space-evenly;overflow:auto}
-label{font-size:17px !important;font-weight:800;display:block;margin-bottom:6px}
-small{font-size:14px !important;color:#333}
-input,select{width:100%;height:64px !important;border:1px solid #cbd5e1;border-radius:12px;padding:0 12px;font-size:17px !important;background:#fff}
+html,body{height:100%}
+body{background:#0a2a4d;color:#0a2a4d;min-height:100dvh;display:flex;flex-direction:column;padding:10px 10px 12px;gap:10px}
+header{text-align:center;color:white}
+header h1{font-size:24px} header h1 span{color:#7cc4ff}
+header p{font-size:12px;opacity:.85}
+.tabs{display:flex;gap:8px}
+.tab{flex:1;height:58px;border:0;border-radius:12px;background:#123f6b;color:white;font-size:16px;font-weight:700;display:flex;align-items:center;justify-content:center;gap:6px}
+.tab.active{background:white;color:#0a2a4d}
+.card{background:white;border-radius:14px;padding:14px;display:flex;flex-direction:column;gap:12px}
 .row{display:flex;gap:10px}
-.row>div{flex:1}
-.btn{height:84px;min-height:84px;border:0;border-radius:14px;font-size:19px;font-weight:800;cursor:pointer;background:#a8d0f7;width:100%}
-.btn.white{background:#fff}
-.btn.blue{background:#0b4a9e;color:#fff}
-.btn.red{background:#ff3b30;color:#fff}
-.crono{text-align:center}
-.crono b{font-size:64px;display:block;line-height:1}
-.crono span{font-size:15px}
-.mini{display:flex;gap:8px}
-.mini div{flex:1;background:#fff;border-radius:12px;padding:8px;text-align:center}
-.mini b{font-size:22px;display:block}
-.mini small{font-size:13px}
-#lista{max-height:300px;overflow:auto;display:flex;flex-direction:column;gap:8px}
-.item{background:#fff;border-radius:10px;padding:10px;display:flex;justify-content:space-between;align-items:center}
-.del{background:#ff3b30;color:#fff;border:0;border-radius:8px;padding:6px 10px}
-.footer{color:#fff;text-align:center;font-size:13px;opacity:.8}
-table{width:100%;border-collapse:collapse;background:#fff;border-radius:12px;overflow:hidden}
-th,td{padding:10px;text-align:center;font-size:15px;border-bottom:1px solid #eee}
-th{background:#0b4a9e;color:#fff}
+.row>*{flex:1}
+label{font-size:12px;font-weight:800}
+input,select{width:100%;height:58px;border:1.5px solid #dbe6f0;border-radius:10px;padding:0 12px;font-size:16px;background:#f8fbff;color:#0a2a4d}
+.btn{width:100%;border:0;border-radius:12px;font-weight:800;font-size:17px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px}
+.btn-dark{background:#0a2a4d;color:white;height:62px}
+.btn-blue{background:#0b6cff;color:white;height:68px;font-size:18px}
+.btn-cyan{background:#3cc6ff;color:#0a2a4d;height:68px;font-size:17px}
+.btn-green{background:#22b85c;color:white;height:68px;font-size:17px}
+.btn-lightblue{background:#7cc4ff;color:#0a2a4d;height:62px}
+.modo{display:flex;background:#eef6ff;border-radius:12px;padding:4px;gap:4px}
+.modo button{flex:1;height:58px;border:0;border-radius:9px;background:transparent;font-weight:700;font-size:15px}
+.modo button.active{background:#0a2a4d;color:white}
+.crono{text-align:center;font-size:52px;font-weight:900;letter-spacing:1px;line-height:1}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+.mini{background:#0a2a4d;color:white;border-radius:10px;padding:12px 6px;text-align:center}
+.mini small{font-size:10px;opacity:.8} .mini b{font-size:18px;display:block}
+.stats{display:flex;gap:10px}
+.stats div{flex:1;background:#0a2a4d;color:white;border-radius:10px;padding:14px;text-align:center}
+.stats b{font-size:24px;display:block}
+table{width:100%;border-collapse:collapse;font-size:14px} th,td{padding:10px;border-bottom:1px solid #eee;text-align:left}
 .hidden{display:none !important}
+#lista{max-height:300px;overflow:auto}
+.del{background:#ff3b30;color:white;border:0;border-radius:8px;padding:6px 10px}
+.footer{color:white;text-align:center;font-size:11px;opacity:.7;padding:4px}
+/* PARCHE V3 - LLENAR PANTALLA */
+body{justify-content:space-between !important;gap:14px !important}
+header{padding-top:6px}
+.card{flex:1 !important;justify-content:space-evenly !important}
+button,.btn,.tab{
+  height:84px !important;
+  min-height:84px !important;
+  font-size:19px !important;
+}
+input,select{height:64px !important;font-size:17px !important}
+.crono{font-size:64px !important;padding:6px 0}
+.modo button{height:72px !important}
+#btnCalcular,.btn-blue,.btn-cyan,.btn-green{
+  height:88px !important;
+  font-size:20px !important;
+}
 </style>
 </head>
 <body>
-<header>
-<h1>SIAL • <span>Pasos</span></h1>
-<p>Caminadora / Caminando • 50 pasos base</p>
-</header>
+<header><h1>SIAL • <span>Pasos</span></h1><p id="sub">Caminadora / Caminando • 50 pasos base</p></header>
 
 <div class="tabs">
-<button class="tab active" onclick="showTab('calcular',this)">📐 Calcular</button>
-<button class="tab" onclick="showTab('historial',this)">📒 Historial</button>
-<button class="tab" onclick="showTab('tabla',this)">⚙️ Tabla</button>
+<button class="tab active" onclick="showTab('cal',this)">📐 Calcular</button>
+<button class="tab" onclick="showTab('his',this)">📋 Historial</button>
+<button class="tab" onclick="showTab('tab',this)">⚙️ Tabla</button>
 </div>
 
 <!-- CALCULAR -->
-<div class="card" id="tab-calcular">
-<div class="row">
-<div><label>Usuario</label><select id="usuario"><option>Yo</option></select></div>
-<div><label>&nbsp;</label><button class="btn" onclick="nuevoUsuario()">+ Nuevo</button></div>
+<div id="tab-cal" style="display:flex;flex-direction:column;gap:10px;flex:1">
+<div class="card">
+<label>Usuario</label>
+<div class="row"><select id="usuario"></select><button class="btn btn-dark" onclick="nuevoUsuario()">+ Nuevo</button></div>
+<label>Modo</label>
+<div class="modo"><button id="mCaminadora" class="active" onclick="setModo('Caminadora')">🏃 Caminadora</button><button id="mCaminando" onclick="setModo('Caminando')">🚶 Caminando</button></div>
 </div>
 
-<div class="row">
-<div><label>Modo</label><select id="modo"><option value="Caminadora">Caminadora</option><option value="Caminando">Caminando</option></select></div>
-<div><label>Cronómetro</label><div class="crono"><b id="tiempo">00:00.0</b><span>50 pasos</span></div></div>
+<div class="card">
+<label>Cronómetro 50 pasos</label>
+<div class="crono" id="crono">00:00.0</div>
+<div class="row"><button class="btn btn-lightblue" id="btnCrono" onclick="toggleCrono()">▶ INICIAR</button><button class="btn btn-dark" onclick="resetCrono()">↺ Reiniciar</button></div>
+<label>Nombre medición</label><input id="nombreMed" placeholder="Ej: Normal, Lento, Parque">
+<button class="btn btn-blue" onclick="usarTiempo()">↓ USAR ESTE TIEMPO EN EL CÁLCULO</button>
 </div>
 
-<div class="row">
-<button class="btn white" id="btnCrono" onclick="toggleCrono()">▶ Iniciar</button>
-<button class="btn red" onclick="resetCrono()">↺ Reiniciar</button>
+<div class="card">
+<label>Velocidad (No.)</label><select id="velSel" onchange="cargarVel()"></select>
+<div class="grid3"><label>NP</label><label>Seg 50 pasos</label><label>Tmpo Mov</label></div>
+<div class="grid3"><input id="np" type="number" value="50"><input id="seg" type="number" value="42"><input id="tmpo" type="number" value="30"></div>
+<small style="font-size:11px;color:#666">(Tmpo Mov x 60 / Seg 50) x NP — TPxMin = Seg / NP</small>
+<div class="grid3"><div class="mini"><small>TPxMin</small><b id="rTP">0.84</b></div><div class="mini"><small>PxMin</small><b id="rPx">71.4</b></div><div class="mini"><small>PASOS</small><b id="rPasos">2143</b></div></div>
+<button class="btn btn-blue" onclick="calcular()">CALCULAR</button>
+<button class="btn btn-cyan" onclick="guardar()">✅ GUARDAR REGISTRO</button>
 </div>
 
-<div><label>Nombre medición</label><input id="nombre" placeholder="Ej: Mañana / Tarde"></div>
-
-<div class="row">
-<div><label>Velocidad (No.)</label><input id="velocidad" type="number" step="0.1" placeholder="Ej: 3.5"></div>
-<div><label>NP</label><input id="np" type="number" placeholder="Ej: 50"></div>
+<div class="card">
+<label>Hoy • <span id="hoyUser">Yo</span></label>
+<div class="stats"><div><small>Pasos hoy</small><b id="hoyPasos">0</b></div><div><small>Registros</small><b id="hoyReg">0</b></div></div>
+<button class="btn btn-green" onclick="exportar()">📥 EXPORTAR A EXCEL</button>
 </div>
-
-<div class="row">
-<div><label>Seg 50 pasos</label><input id="seg" readonly placeholder="0.0"></div>
-<div><label>Tmpo Mov</label><input id="tmpo" readonly placeholder="0.0"></div>
-</div>
-
-<div class="mini">
-<div><small>Pasos / min</small><b id="ppm">0</b></div>
-<div><small>Vel m/s</small><b id="vms">0</b></div>
-<div><small>Vel km/h</small><b id="vkm">0</b></div>
-</div>
-
-<button class="btn blue" onclick="guardar()">💾 Guardar Medición</button>
-<small>Se guarda en Historial con fecha, usuario y modo.</small>
 </div>
 
 <!-- HISTORIAL -->
-<div class="card hidden" id="tab-historial">
-<label>Historial guardado</label>
-<div id="lista"></div>
-<button class="btn red" onclick="borrarTodo()">Borrar todo el historial</button>
-</div>
+<div id="tab-his" class="card hidden"><label>Historial</label><div id="lista"></div><button class="btn btn-dark" onclick="borrarTodo()">Borrar todo</button></div>
 
 <!-- TABLA -->
-<div class="card hidden" id="tab-tabla">
-<label>Tabla de referencia</label>
-<table>
-<tr><th>Velocidad</th><th>Seg 50 pasos</th><th>Pasos/min</th></tr>
-<tr><td>2.0</td><td>45.0</td><td>67</td></tr>
-<tr><td>3.0</td><td>30.0</td><td>100</td></tr>
-<tr><td>3.5</td><td>25.7</td><td>117</td></tr>
-<tr><td>4.0</td><td>22.5</td><td>133</td></tr>
-<tr><td>5.0</td><td>18.0</td><td>167</td></tr>
-</table>
-<small>Valores de referencia para 50 pasos base. Tu medición real se calcula con el cronómetro.</small>
-</div>
+<div id="tab-tab" class="card hidden"><label>Tabla de Velocidades</label><div class="row"><input id="nVelNombre" placeholder="Ej: Vel 2"><input id="nVelSeg" type="number" placeholder="Seg 50 pasos"></div><button class="btn btn-blue" onclick="agregarVel()">+ Agregar velocidad</button><div id="listaVel"></div></div>
 
-<div class="footer">SIAL • Pasos - v103</div>
+<div class="footer">SIAL • Sin internet • Guarda en tu celular</div>
 
 <script>
-let startTime=0,elapsed=0,timer=null,running=false;
-let historial=JSON.parse(localStorage.getItem('sial_historial')||'[]');
+let modo='Caminadora', usuarios=JSON.parse(localStorage.getItem('sial_pasos_usuarios')||'["Yo"]'), registros=JSON.parse(localStorage.getItem('sial_pasos_reg')||'[]'), vels=JSON.parse(localStorage.getItem('sial_pasos_vels')||'[{"n":"No. 1 - Vel 1","seg":42}]');
+let cronoInt=null, cronoStart=0, cronoElapsed=0, cronoRun=false;
+function save(){localStorage.setItem('sial_pasos_usuarios',JSON.stringify(usuarios));localStorage.setItem('sial_pasos_reg',JSON.stringify(registros));localStorage.setItem('sial_pasos_vels',JSON.stringify(vels));}
+function showTab(id,btn){['cal','his','tab'].forEach(t=>document.getElementById('tab-'+t).classList.toggle('hidden',t!==id));document.querySelectorAll('.tab').forEach(b=>b.classList.remove('active'));btn.classList.add('active');if(id==='his')renderHis();if(id==='tab')renderVel();}
+function setModo(m){modo=m;document.getElementById('mCaminadora').classList.toggle('active',m==='Caminadora');document.getElementById('mCaminando').classList.toggle('active',m==='Caminando');document.getElementById('sub').textContent=m+' • 50 pasos base';}
+function renderUsuarios(){let s=document.getElementById('usuario');s.innerHTML=usuarios.map(u=>`<option>${u}</option>`).join('');document.getElementById('hoyUser').textContent=s.value;}
+function nuevoUsuario(){let n=prompt('Nombre del usuario:');if(!n)return;usuarios.push(n);save();renderUsuarios();document.getElementById('usuario').value=n;}
+function renderVelSel(){let s=document.getElementById('velSel');s.innerHTML=vels.map((v,i)=>`<option value="${i}">No. ${i+1} - ${v.n} - ${v.seg} seg</option>`).join('');}
+function cargarVel(){let v=vels[document.getElementById('velSel').value];if(v)document.getElementById('seg').value=v.seg;calcular();}
+function renderVel(){document.getElementById('listaVel').innerHTML=vels.map((v,i)=>`<div style="display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid #eee">No.${i+1} ${v.n} - ${v.seg}s <button class="del" onclick="delVel(${i})">X</button></div>`).join('')||'Sin velocidades';}
+function agregarVel(){let n=document.getElementById('nVelNombre').value||('Vel '+(vels.length+1));let s=parseFloat(document.getElementById('nVelSeg').value);if(!s)return alert('Pon los segundos');vels.push({n,seg:s});save();renderVelSel();renderVel();}
+function delVel(i){vels.splice(i,1);save();renderVelSel();renderVel();}
 function fmt(ms){let s=ms/1000;let m=Math.floor(s/60);let sec=(s%60).toFixed(1).padStart(4,'0');return String(m).padStart(2,'0')+':'+sec;}
-function toggleCrono(){
- if(!running){running=true;startTime=Date.now()-elapsed;document.getElementById('btnCrono').textContent='⏸ Pausar';timer=setInterval(()=>{elapsed=Date.now()-startTime;document.getElementById('tiempo').textContent=fmt(elapsed);calc();},100);}
- else{running=false;clearInterval(timer);document.getElementById('btnCrono').textContent='▶ Iniciar';}
-}
-function resetCrono(){running=false;clearInterval(timer);elapsed=0;document.getElementById('tiempo').textContent='00:00.0';document.getElementById('btnCrono').textContent='▶ Iniciar';calc();}
-function calc(){
- let seg=elapsed/1000;
- document.getElementById('seg').value=seg?seg.toFixed(1):'';
- document.getElementById('tmpo').value=seg?seg.toFixed(1):'';
- let ppm=seg>0?(50/seg*60):0;
- document.getElementById('ppm').textContent=Math.round(ppm);
- let vms=seg>0?(35/seg):0;
- document.getElementById('vms').textContent=vms.toFixed(2);
- document.getElementById('vkm').textContent=(vms*3.6).toFixed(2);
-}
-function showTab(id,btn){document.querySelectorAll('.tab').forEach(b=>b.classList.remove('active'));btn.classList.add('active');['calcular','historial','tabla'].forEach(t=>{document.getElementById('tab-'+t).classList.toggle('hidden',t!==id)});if(id==='historial')render();}
-function nuevoUsuario(){let n=prompt('Nombre del nuevo usuario:');if(!n)return;let s=document.getElementById('usuario');let o=document.createElement('option');o.textContent=n;s.appendChild(o);s.value=n;}
-function guardar(){
- let seg=elapsed/1000;if(seg<=0){alert('Primero usa el cronómetro');return;}
- let d={fecha:new Date().toLocaleString(),usuario:document.getElementById('usuario').value,modo:document.getElementById('modo').value,nombre:document.getElementById('nombre').value||'Sin nombre',vel:document.getElementById('velocidad').value||'-',np:document.getElementById('np').value||'-',seg:seg.toFixed(1),ppm:document.getElementById('ppm').textContent};
- historial.unshift(d);localStorage.setItem('sial_historial',JSON.stringify(historial));alert('Guardado');render();
-}
-function render(){let l=document.getElementById('lista');if(!historial.length){l.innerHTML='<small>Sin mediciones aún.</small>';return;}l.innerHTML=historial.map((h,i)=>`<div class="item"><div><b>${h.nombre}</b><br><small>${h.fecha} • ${h.usuario} • ${h.modo} • ${h.seg}s • ${h.ppm} ppm</small></div><button class="del" onclick="borrar(${i})">X</button></div>`).join('');}
-function borrar(i){historial.splice(i,1);localStorage.setItem('sial_historial',JSON.stringify(historial));render();}
-function borrarTodo(){if(confirm('¿Borrar todo?')){historial=[];localStorage.removeItem('sial_historial');render();}}
-render();calc();
+function toggleCrono(){if(!cronoRun){cronoRun=true;cronoStart=Date.now()-cronoElapsed;document.getElementById('btnCrono').textContent='⏸ PAUSAR';cronoInt=setInterval(()=>{cronoElapsed=Date.now()-cronoStart;document.getElementById('crono').textContent=fmt(cronoElapsed);},100);}else{cronoRun=false;clearInterval(cronoInt);document.getElementById('btnCrono').textContent='▶ INICIAR';}}
+function resetCrono(){clearInterval(cronoInt);cronoRun=false;cronoElapsed=0;document.getElementById('crono').textContent='00:00.0';document.getElementById('btnCrono').textContent='▶ INICIAR';}
+function usarTiempo(){let seg=(cronoElapsed/1000)||parseFloat(document.getElementById('crono').textContent.split(':')[1])||0;if(!seg)return alert('Primero inicia el cronómetro');document.getElementById('seg').value=Math.round(seg*10)/10;calcular();alert('Tiempo '+seg.toFixed(1)+'s usado');}
+function calcular(){let np=parseFloat(document.getElementById('np').value)||50;let seg=parseFloat(document.getElementById('seg').value)||1;let tmpo=parseFloat(document.getElementById('tmpo').value)||0;let tp=seg/np;let px=60/tp;let pasos=Math.round(px*tmpo);document.getElementById('rTP').textContent=tp.toFixed(2);document.getElementById('rPx').textContent=px.toFixed(1);document.getElementById('rPasos').textContent=pasos;actualizarHoy();return {np,seg,tmpo,tp,px,pasos};}
+function guardar(){let c=calcular();let r={fecha:new Date().toLocaleString('es-MX'),usuario:document.getElementById('usuario').value,modo, nombre:document.getElementById('nombreMed').value||'Sin nombre',...c};registros.unshift(r);save();renderHis();actualizarHoy();alert('Guardado: '+c.pasos+' pasos');}
+function actualizarHoy(){let hoy=new Date().toLocaleDateString('es-MX');let u=document.getElementById('usuario').value;let f=registros.filter(r=>r.fecha.includes(hoy)&&r.usuario===u);document.getElementById('hoyPasos').textContent=f.reduce((a,b)=>a+b.pasos,0);document.getElementById('hoyReg').textContent=f.length;}
+function renderHis(){document.getElementById('lista').innerHTML=registros.map((r,i)=>`<div style="padding:10px 0;border-bottom:1px solid #eee"><b>${r.pasos} pasos</b> - ${r.nombre} - ${r.modo}<br><small>${r.fecha} • ${r.usuario} • ${r.seg}s / ${r.tmpo} min</small> <button class="del" onclick="delReg(${i})">X</button></div>`).join('')||'Sin registros';}
+function delReg(i){registros.splice(i,1);save();renderHis();actualizarHoy();}
+function borrarTodo(){if(confirm('¿Borrar todo?')){registros=[];save();renderHis();actualizarHoy();}}
+function exportar(){let csv='Fecha,Usuario,Modo,Nombre,NP,Seg 50,Tmpo Mov,TPxMin,PxMin,Pasos\n'+registros.map(r=>[r.fecha,r.usuario,r.modo,r.nombre,r.np,r.seg,r.tmpo,r.tp.toFixed(2),r.px.toFixed(1),r.pasos].join(',')).join('\n');let a=document.createElement('a');a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv'}));a.download='SIAL_Pasos.csv';a.click();}
+document.getElementById('usuario').addEventListener('change',e=>{document.getElementById('hoyUser').textContent=e.target.value;actualizarHoy();});
+renderUsuarios();renderVelSel();calcular();
 </script>
 </body>
 </html>
